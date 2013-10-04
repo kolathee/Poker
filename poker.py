@@ -14,3 +14,7 @@ def is_stright(hand):
 		if num[i]+1!=num[i+1]:
 			return False
 	return True
+def is_royal(hand):
+	if sum(numhand(hand))== 60 and len(set(dokhand(hand))==1
+		return True
+	return False

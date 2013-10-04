@@ -4,19 +4,19 @@ import poker
 class Testpoker(unittest.TestCase):
 
     def test1_numhand(self):
-        """test_numhand ["2C","3C","4D","5H","6S"]-->[2,4,4,5,6]"""
+        """test_numhand ["2C","3C","4D","5H","6S"]-->[2,3,4,5,6]"""
         actual = poker.numhand(["2C","3C","4D","5H","6S"])
-        expected = ["2","3","4","5","6"]
+        expected = [2,3,4,5,6]
         self.assertEqual(actual, expected)
     def test2_numhand(self):
         """test_numhand ["8D","9H","3D","3C","7S"]-->[8,9,3,3,7]"""
         actual = poker.numhand(["8D","9H","3D","3C","7S"])
-        expected = ["8","9","3","3","7"]
+        expected = [8,9,3,3,7]
         self.assertEqual(actual, expected)
     def test3_numhand(self):
-        """test_numhand ["1D","1C","1H","6S","JD"]-->[1,1,1,6,J]"""
-        actual = poker.numhand(["1D","1C","1H","6S","JD"])
-        expected = ["1","1","1","6","J"]
+        """test_numhand ["2D","2C","2H","6S","JD"]-->[2,2,2,6,J]"""
+        actual = poker.numhand(["2D","2C","2H","6S","JD"])
+        expected = [2,2,2,6,11]
         self.assertEqual(actual, expected)
     def test1_dokhand(self):
         """test_dokhand ["2C","3C","4D","5H","6S"]-->['C','C','D','H','S']"""
@@ -33,17 +33,41 @@ class Testpoker(unittest.TestCase):
         actual = poker.dokhand(["8D","9H","3D","3C","7S"])
         expected = ["D","H","D","C","S"]
         self.assertEqual(actual, expected)
-    def test1_flush(self):
-        """test_flush ['JC', 'TC', '9C', '8C', '7C']-->True"""
-        actual = poker.flush(['JC', 'TC', '9C', '8C', '7C'])
+    def test1_is_flush(self):
+        """test_is_flush ['JC', 'TC', '9C', '8C', '7C']-->True"""
+        actual = poker.is_flush(['JC', 'TC', '9C', '8C', '7C'])
         expected = True
         self.assertEqual(actual, expected)
-    def test2_flush(self):
-        """test_flush ['5S', '5H', '5D', '5C', 'KS']-->False"""
-        actual = poker.flush(['5S', '5H', '5D', '5C', 'KS'])
+    def test2_is_flush(self):
+        """test_is_flush ['5S', '5H', '5D', '5C', 'KS']-->False"""
+        actual = poker.is_flush(['5S', '5H', '5D', '5C', 'KS'])
         expected = False
         self.assertEqual(actual, expected)
-    
+    def test1_is_stright(self):
+        """test1_is_stright ['6S', '8H', '7S', '9C', 'TS']-->True"""
+        actual = poker.is_stright(['6S', '8H', '7S', '9C', 'TS'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test2_is_stright(self):
+        """test2_is_stright ['QC', '2S', '8S', '3S', '6S']-->False"""
+        actual = poker.is_stright(['QC', '2S', '8S', '3S', '6S'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test3_is_stright(self):
+        """test3_is_stright ['TS', 'TH', 'JC', 'KH', '4H']-->False"""
+        actual = poker.is_stright(['TS', 'TH', 'JC', 'KH', '4H'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test4_is_stright(self):
+        """test4_is_stright ['KH', 'QC', 'TC', 'JS', 'AC']-->True"""
+        actual = poker.is_stright(['2H', 'QC', '3C', 'QS', '5C'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test5_is_stright(self):
+        """test5_is_stright ['JH', '6C', '3H', '2S', '6D']-->False"""
+        actual = poker.is_stright(['JH', '6C', '3H', '2S', '6D'])
+        expected = False
+        self.assertEqual(actual, expected)
 
 if __name__ == '__main__':
     unittest.main(exit=False)

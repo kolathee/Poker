@@ -1,12 +1,12 @@
 def numhand(hand):
-	rank = ['-A23456789TJQK'.index(r) for r,s in hand]
+	rank = ['--23456789TJQKA'.index(r) for r,s in hand]
 	return rank
 def dokhand(hand):
     suit=[s for r,s in hand]
     return suit
 def is_flush(hand):
     suit=dokhand(hand)
-    return len(set(suits)) == 1
+    return len(set(suit)) == 1
 def is_stright(hand):
 	num=numhand(hand)
 	num.sort()
@@ -15,6 +15,6 @@ def is_stright(hand):
 			return False
 	return True
 def is_royal(hand):
-	if sum(numhand(hand))== 60 and len(set(dokhand(hand))==1
+	if sum(numhand(hand))== 60 and len(set(dokhand(hand)))==1:
 		return True
 	return False

@@ -52,3 +52,14 @@ def is_two_pair(hand):
 	if count == 2:
 		return True
 	return False 
+
+def is_one_pair(hand):
+	count=0
+	num=numhand(hand)
+	numset=list(set(num))
+	for each in numset:
+		if num.count(each)==2:
+			count+=1
+	if count == 1:
+		return True
+	return False 

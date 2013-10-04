@@ -1,5 +1,5 @@
 def numhand(hand):
-	rank=[int(r) for r,s in hand]
+	ranks = ['-A23456789TJQK'.index(r) for r,s in hand]
 	return rank
 def dokhand(hand):
     suit=[s for r,s in hand]

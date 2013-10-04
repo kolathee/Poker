@@ -230,6 +230,11 @@ class TestOne_pair(unittest.TestCase):
         actual = poker.is_one_pair(['4D', '5C', 'JS', 'QH', '3H'])
         expected = False
         self.assertEqual(actual, expected)
+    def test5_is_one_pair(self):
+        """test1_is_one_pair ['2D', '9D', '2S', 'AD', 'AH']-->False"""
+        actual = poker.is_one_pair(['2D', '9D', '2S', 'AD', 'AH'])
+        expected = False
+        self.assertEqual(actual, expected)
 
 if __name__ == '__main__':
     unittest.main(exit=False)

@@ -28,6 +28,9 @@ class Testpoker(unittest.TestCase):
         actual = poker.dokhand(["JC","TC","9C","8C","7C"])
         expected = ['C']
         self.assertEqual(actual, expected)        
-
+    def test3_dokhand(self):
+        """test_numhand ["8D","9H","3D","3C","7S"]-->[8,9,3,3,7]"""
+        actual = poker.numhand(["8D","9H","3D","3C","7S"])
+        expected = ["D","H","D","C","S"]
 if __name__ == '__main__':
     unittest.main(exit=False)

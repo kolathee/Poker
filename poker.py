@@ -24,6 +24,4 @@ def is_royal(hand):
 	return False
 
 def is_straightflush(hand):
-	if is_straight(hand) and is_flush(hand):
-		return True
-	return False
+	return is_straight(hand) and is_flush(hand)

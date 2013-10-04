@@ -14,7 +14,7 @@ class TestNumhand(unittest.TestCase):
         expected = [8,9,3,3,7]
         self.assertEqual(actual, expected)
     def test3_numhand(self):
-        """test_numhand ['2D','2C','2H','6S','JD']-->[2,2,2,6,J]"""
+        """test_numhand ['2D','2C','2H','6S','JD']-->[2,2,2,6,11]"""
         actual = poker.numhand(['2D','2C','2H','6S','JD'])
         expected = [2,2,2,6,11]
         self.assertEqual(actual, expected)

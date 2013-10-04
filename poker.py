@@ -25,3 +25,11 @@ def is_royal(hand):
 
 def is_straightflush(hand):
 	return is_straight(hand) and is_flush(hand)
+
+def is_three_of_kind(hand):
+	num=numhand(hand)
+	numset=list(set(num))
+	for each in numset:
+		if num.count(each)==3:
+			return True
+	return False

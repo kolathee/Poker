@@ -41,3 +41,14 @@ def is_four_of_kind(hand):
 		if num.count(each)==4:
 			return True
 	return False
+
+def is_two_pair(hand):
+	count=0
+	num=numhand(hand)
+	numset=list(set(num))
+	for each in numset:
+		if num.count(each)==2:
+			count+=1
+	if count == 2:
+		return True
+	return False 

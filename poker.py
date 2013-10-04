@@ -33,3 +33,11 @@ def is_three_of_kind(hand):
 		if num.count(each)==3:
 			return True
 	return False
+
+def is_four_of_kind(hand):
+	num=numhand(hand)
+	numset=list(set(num))
+	for each in numset:
+		if num.count(each)==4:
+			return True
+	return False

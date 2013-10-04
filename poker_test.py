@@ -33,6 +33,17 @@ class Testpoker(unittest.TestCase):
         actual = poker.dokhand(["8D","9H","3D","3C","7S"])
         expected = ["D","H","D","C","S"]
         self.assertEqual(actual, expected)
+    def test1_flush(self):
+        """test_flush ['JC', 'TC', '9C', '8C', '7C']-->True"""
+        actual = poker.flush(['JC', 'TC', '9C', '8C', '7C'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test2_flush(self):
+        """test_flush ['5S', '5H', '5D', '5C', 'KS']-->False"""
+        actual = poker.flush(['5S', '5H', '5D', '5C', 'KS'])
+        expected = False
+        self.assertEqual(actual, expected)
+    
 
 if __name__ == '__main__':
     unittest.main(exit=False)

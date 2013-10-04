@@ -19,18 +19,16 @@ class Testpoker(unittest.TestCase):
         expected = ["1","1","1","6","J"]
         self.assertEqual(actual, expected)
     def test1_dokhand(self):
-        """test_dokhand ["2C","3C","4D","5H","6S"]-->['C','D','H','S']"""
+        """test_dokhand ["2C","3C","4D","5H","6S"]-->['C','C','D','H','S']"""
         actual = poker.dokhand(["2C","3C","4D","5H","6S"])
-        expected = ['C','D','H','S']
+        expected = ['C','C','D','H','S']
         self.assertEqual(actual, expected)
     def test2_dokhand(self):
-        """test_dokhand ["JC","TC","9C","8C","7C"]-->['C']"""
+        """test_dokhand ["JC","TC","9C","8C","7C"]-->['C','C','C','C','C']"""
         actual = poker.dokhand(["JC","TC","9C","8C","7C"])
-        expected = ['C']
-        self.assertEqual(actual, expected)        
-    def test3_dokhand(self):
-        """test_dokhand ["8D","9H","3D","3C","7S"]-->["D","H","D","C","S"]"""
-        actual = poker.dokhand(["8D","9H","3D","3C","7S"])
-        expected = ["D","H","D","D","S"]
+        expected = ['C','C','C','C','C']
+        self.assertEqual(actual, expected)
+      
+
 if __name__ == '__main__':
     unittest.main(exit=False)

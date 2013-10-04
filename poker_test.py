@@ -158,9 +158,11 @@ class Testthree_of_kind(unittest.TestCase):
         """test5_is_Three_of_kind ['AS', 'AD', '3C', '8C', 'AH']-->True"""
         actual = poker.is_three_of_kind(['AS', 'AD', '3C', '8C', 'AH'])
         expected = True
+        self.assertEqual(actual, expected)
     def test6_is_three_of_kind(self):
         """test6_is_Three_of_kind ['AS', 'AD', '3C', '8C', 'AH']-->True"""
         actual = poker.is_three_of_kind(['AS', 'AD', '3C', '8C', 'AH'])
         expected = True
+        self.assertEqual(actual, expected)
 if __name__ == '__main__':
     unittest.main(exit=False)

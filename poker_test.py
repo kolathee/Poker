@@ -236,5 +236,27 @@ class TestOne_pair(unittest.TestCase):
         expected = False
         self.assertEqual(actual, expected)
 
+class TestFullHouse(unittest.TestCase):
+    def test1_is_fullhouse(self):
+        """test1_is_fullhouse ['4D', '4S', '2D', '4D', '2H']-->True"""
+        actual = poker.is_fullhouse(['4D', '4S', '2D', '4D', '2H'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test2_is_fullhouse(self):
+        """test2_is_fullhouse ['JD', '5C', '7D', '3D', '2D']-->False"""
+        actual = poker.is_fullhouse(['JD', '5C', '7D', '3D', '2D'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test3_is_fullhouse(self):
+        """test3_is_fullhouse ['5D', 'TS', '5C', 'TD', '5H']-->True"""
+        actual = poker.is_fullhouse(['5D', 'TS', '5C', 'TD', '5H'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test4_is_fullhouse(self):
+        """test4_is_fullhouse ['4D', '5C', 'JS', 'QH', '3H']-->False"""
+        actual = poker.is_fullhouse(['4D', '5C', 'JS', 'QH', '3H'])
+        expected = False
+        self.assertEqual(actual, expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)

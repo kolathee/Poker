@@ -52,29 +52,29 @@ class TestFlush(unittest.TestCase):
 
 class TestStraight(unittest.TestCase):        
 
-    def test1_is_stright(self):
-        """test1_is_stright ['6S', '8H', '7S', '9C', 'TS']-->True"""
-        actual = poker.is_stright(['6S', '8H', '7S', '9C', 'TS'])
+    def test1_is_straight(self):
+        """test1_is_straight ['6S', '8H', '7S', '9C', 'TS']-->True"""
+        actual = poker.is_straight(['6S', '8H', '7S', '9C', 'TS'])
         expected = True
         self.assertEqual(actual, expected)
-    def test2_is_stright(self):
-        """test2_is_stright ['QC', '2S', '8S', '3S', '6S']-->False"""
-        actual = poker.is_stright(['QC', '2S', '8S', '3S', '6S'])
+    def test2_is_straight(self):
+        """test2_is_straight ['QC', '2S', '8S', '3S', '6S']-->False"""
+        actual = poker.is_straight(['QC', '2S', '8S', '3S', '6S'])
         expected = False
         self.assertEqual(actual, expected)
-    def test3_is_stright(self):
-        """test3_is_stright ['TS', 'TH', 'JC', 'KH', '4H']-->False"""
-        actual = poker.is_stright(['TS', 'TH', 'JC', 'KH', '4H'])
+    def test3_is_straight(self):
+        """test3_is_straight ['TS', 'TH', 'JC', 'KH', '4H']-->False"""
+        actual = poker.is_straight(['TS', 'TH', 'JC', 'KH', '4H'])
         expected = False
         self.assertEqual(actual, expected)
-    def test4_is_stright(self):
-        """test4_is_stright ['KH', 'QC', 'TC', 'JS', 'AC']-->True"""
-        actual = poker.is_stright(['KH', 'QC', 'TC', 'JS', 'AC'])
+    def test4_is_straight(self):
+        """test4_is_straight ['KH', 'QC', 'TC', 'JS', 'AC']-->True"""
+        actual = poker.is_straight(['KH', 'QC', 'TC', 'JS', 'AC'])
         expected = True
         self.assertEqual(actual, expected)
-    def test5_is_stright(self):
-        """test5_is_stright ['JH', '6C', '3H', '2S', '6D']-->False"""
-        actual = poker.is_stright(['JH', '6C', '3H', '2S', '6D'])
+    def test5_is_straight(self):
+        """test5_is_straight ['JH', '6C', '3H', '2S', '6D']-->False"""
+        actual = poker.is_straight(['JH', '6C', '3H', '2S', '6D'])
         expected = False
         self.assertEqual(actual, expected)
 

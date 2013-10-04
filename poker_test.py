@@ -93,10 +93,25 @@ class TestStraight(unittest.TestCase):
         expected = True
         self.assertEqual(actual, expected)
     def test5_is_straight(self):
+        """test5_is_straight ['QC','JS','TS','9H','8H']-->True"""
+        actual = poker.is_straight(['QC','JS','TS','9H','8H'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test6_is_straight(self):
+        """test5_is_straight ['AC','KC','QD','JS','TS']-->True"""
+        actual = poker.is_straight(['AC','KC','QD','JS','TS'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test7_is_straight(self):
         """test5_is_straight ['JH', '6C', '3H', '2S', '6D']-->False"""
         actual = poker.is_straight(['JH', '6C', '3H', '2S', '6D'])
         expected = False
         self.assertEqual(actual, expected)
+    def test8_is_straight(self):
+        """test5_is_straight ['3S','2D','AH','KS','QC']-->False"""
+        actual = poker.is_straight(['3S','2D','AH','KS','QC'])
+        expected = False
+        self.assertEqual(actual, expected) 
 
 class TestRoyal(unittest.TestCase):
 

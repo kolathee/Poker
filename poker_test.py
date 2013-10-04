@@ -49,6 +49,26 @@ class TestFlush(unittest.TestCase):
         actual = poker.is_flush(['5S', '5H', '5D', '5C', 'KS'])
         expected = False
         self.assertEqual(actual, expected)
+    def test3_is_flush(self):
+        """test_is_flush ['QD','9D','7D','4D','3D']-->True"""
+        actual = poker.is_flush(['QD','9D','7D','4D','3D'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test4_is_flush(self):
+        """test_is_flush ['KH','QH','9H','5H','4H']-->True"""
+        actual = poker.is_flush(['KH','QH','9H','5H','4H'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test5_is_flush(self):
+        """test_is_flush ['5S', '5H', '5D', '5C', 'KS']-->False"""
+        actual = poker.is_flush(['5S', '5H', '5D', '5C', 'KS'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test6_is_flush(self):
+        """test_is_flush ['4H','4D','4S','4C','2D']-->False"""
+        actual = poker.is_flush(['4H','4D','4S','4C','2D'])
+        expected = False
+        self.assertEqual(actual, expected)
 
 class TestStraight(unittest.TestCase):        
 

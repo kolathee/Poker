@@ -22,3 +22,8 @@ def is_royal(hand):
 	if sum(numhand(hand))== 60 and len(set(dokhand(hand)))==1:
 		return True
 	return False
+
+def is_straightflush(hand):
+	if is_straight(hand) and is_flush(hand):
+		return True
+	return False

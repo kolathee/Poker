@@ -133,5 +133,34 @@ class TestRoyal(unittest.TestCase):
         expected = False
         self.assertEqual(actual, expected)
 
+class TestThree_of_kind(unittest.TestCase)
+    def test1_is_Three_of_kind(self):
+        """test1_is_Three_of_kind ['3C', 'TD', '5D', '4H', '8H']-->False"""
+        actual = poker.is_Three_of_kind(['3C', 'TD', '5D', '4H', '8H'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test2_is_Three_of_kind(self):
+        """test2_is_Three_of_kind ['5S', '5D', '5C', '8C', '5H']-->True"""
+        actual = poker.is_Three_of_kind(['5S', '5D', '5C', '8C', '5H'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test3_is_Three_of_kind(self):
+        """test3_is_Three_of_kind ['8C', 'KH', '8S', '9S', '6D']-->False"""
+        actual = poker.is_Three_of_kind(['8C', 'KH', '8S', '9S', '6D'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test4_is_Three_of_kind(self):
+        """test4_is_Three_of_kind ['TC', 'TD', '9H', '6C', 'AS']-->False"""
+        actual = poker.is_Three_of_kind(['TC', 'TD', '9H', '6C', 'AS'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test5_is_Three_of_kind(self):
+        """test5_is_Three_of_kind ['AS', 'AD', '3C', '8C', 'AH']-->True"""
+        actual = poker.is_Three_of_kind(['AS', 'AD', '3C', '8C', 'AH'])
+        expected = True
+    def test6_is_Three_of_kind(self):
+        """test6_is_Three_of_kind ['AS', 'AD', '3C', '8C', 'AH']-->True"""
+        actual = poker.is_Three_of_kind(['AS', 'AD', '3C', '8C', 'AH'])
+        expected = True
 if __name__ == '__main__':
     unittest.main(exit=False)

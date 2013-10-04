@@ -1,7 +1,7 @@
 import unittest
 import poker
 
-class Testpoker(unittest.TestCase):
+class TestNumhand(unittest.TestCase):
 
     def test1_numhand(self):
         """test_numhand ["2C","3C","4D","5H","6S"]-->[2,3,4,5,6]"""
@@ -18,6 +18,9 @@ class Testpoker(unittest.TestCase):
         actual = poker.numhand(["2D","2C","2H","6S","JD"])
         expected = [2,2,2,6,11]
         self.assertEqual(actual, expected)
+
+class TestDokhand(unittest.TestCase):
+
     def test1_dokhand(self):
         """test_dokhand ["2C","3C","4D","5H","6S"]-->['C','C','D','H','S']"""
         actual = poker.dokhand(["2C","3C","4D","5H","6S"])
@@ -33,6 +36,9 @@ class Testpoker(unittest.TestCase):
         actual = poker.dokhand(["8D","9H","3D","3C","7S"])
         expected = ["D","H","D","C","S"]
         self.assertEqual(actual, expected)
+
+class TestFlush(unittest.TestCase):
+
     def test1_is_flush(self):
         """test_is_flush ['JC', 'TC', '9C', '8C', '7C']-->True"""
         actual = poker.is_flush(['JC', 'TC', '9C', '8C', '7C'])
@@ -43,6 +49,9 @@ class Testpoker(unittest.TestCase):
         actual = poker.is_flush(['5S', '5H', '5D', '5C', 'KS'])
         expected = False
         self.assertEqual(actual, expected)
+
+class TestStraight(unittest.TestCase):        
+
     def test1_is_stright(self):
         """test1_is_stright ['6S', '8H', '7S', '9C', 'TS']-->True"""
         actual = poker.is_stright(['6S', '8H', '7S', '9C', 'TS'])
@@ -60,12 +69,32 @@ class Testpoker(unittest.TestCase):
         self.assertEqual(actual, expected)
     def test4_is_stright(self):
         """test4_is_stright ['KH', 'QC', 'TC', 'JS', 'AC']-->True"""
-        actual = poker.is_stright(['2H', 'QC', '3C', 'QS', '5C'])
+        actual = poker.is_stright(['KH', 'QC', 'TC', 'JS', 'AC'])
         expected = True
         self.assertEqual(actual, expected)
     def test5_is_stright(self):
         """test5_is_stright ['JH', '6C', '3H', '2S', '6D']-->False"""
         actual = poker.is_stright(['JH', '6C', '3H', '2S', '6D'])
+        expected = False
+        self.assertEqual(actual, expected)
+
+class TestRoyal(unittest.TestCase):
+
+    def test1_is_royal(self):
+        """test1_is_royal ['TC','JC','QC','KC','AC']-->True"""
+        actual = poker.is_royal(['TC','JC','QC','KC','AC'])
+        expected = True
+        self.assertEqual(actual, expected)
+
+    def test2_is_royal(self):
+        """test2_is_royal ['TH','JH','QH','KH','AH']-->True"""
+        actual = poker.is_royal(['TH','JH','QH','KH','AH'])
+        expected = True
+        self.assertEqual(actual, expected)
+
+    def test3_is_royal(self):
+        """test3_is_royal ['TH','JC','QH','KC','AH']-->False"""
+        actual = poker.is_royal(['TH','JC','QH','KC','AH'])
         expected = False
         self.assertEqual(actual, expected)
 

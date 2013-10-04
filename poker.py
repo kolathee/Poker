@@ -7,7 +7,7 @@ def dokhand(hand):
 def is_flush(hand):
     suit=dokhand(hand)
     return len(set(suit)) == 1
-def is_stright(hand):
+def is_straight(hand):
 	num=numhand(hand)
 	num.sort()
 	for i in xrange(3):

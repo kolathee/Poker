@@ -62,4 +62,11 @@ def is_one_pair(hand):
 			count+=1
 	if count == 1:
 		return True
-	return False 
+	return False
+
+def is_fullhouse(hand):
+	num=numhand(hand)
+	numset=list(set(num))
+	if len(numset)!=2:
+		return False
+	return (num.count(numset[0])==3 and num.count(numset[1])==2) or	(num.count(numset[0])==2 and num.count(numset[1])==3)

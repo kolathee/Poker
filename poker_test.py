@@ -187,5 +187,49 @@ class Testfour_of_kind(unittest.TestCase):
         expected = False
         self.assertEqual(actual, expected)
 
+class TestTwo_pair(unittest.TestCase):
+    def test1_is_two_pair(self):
+        """test1_is_two_pair ['2D', '9D', '2S', 'AD', 'AH']-->True"""
+        actual = poker.is_two_pair(['2D', '9D', '2S', 'AD', 'AH'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test2_is_two_pair(self):
+        """test2_is_two_pair ['8S', '7S', '2S', '8D', '7C']-->True"""
+        actual = poker.is_two_pair(['8S', '7S', '2S', '8D', '7C'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test3_is_two_pair(self):
+        """test3_is_two_pair ['3C', '4H', '5D', 'TC', 'AC']-->False"""
+        actual = poker.is_two_pair(['3C', '4H', '5D', 'TC', 'AC'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test4_is_two_pair(self):
+        """test4_is_two_pair ['9H', 'AS', '5C', '5C', 'JC']-->False"""
+        actual = poker.is_two_pair(['9H', 'AS', '5C', '5C', 'JC'])
+        expected = False
+        self.assertEqual(actual, expected)
+
+class TestOne_pair(unittest.TestCase):
+    def test1_is_one_pair(self):
+        """test1_is_one_pair ['6D', '4C', 'AH', 'JC', 'AD']-->True"""
+        actual = poker.is_one_pair(['6D', '4C', 'AH', 'JC', 'AD'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test2_is_one_pair(self):
+        """test2_is_one_pair ['QH', 'AH', 'QC', '4S', '8S']-->True"""
+        actual = poker.is_one_pair(['QH', 'AH', 'QC', '4S', '8S'])
+        expected = True
+        self.assertEqual(actual, expected)
+    def test3_is_one_pair(self):
+        """test3_is_one_pair ['KS', 'QD', '5S', 'TH', '6C']-->False"""
+        actual = poker.is_one_pair(['KS', 'QD', '5S', 'TH', '6C'])
+        expected = False
+        self.assertEqual(actual, expected)
+    def test4_is_one_pair(self):
+        """test4_is_one_pair ['4D', '5C', 'JS', 'QH', '3H']-->False"""
+        actual = poker.is_one_pair(['4D', '5C', 'JS', 'QH', '3H'])
+        expected = False
+        self.assertEqual(actual, expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)

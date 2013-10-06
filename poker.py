@@ -107,7 +107,7 @@ def handrank(hand):
 		for each in numset:
 			if num.count(each)==2:
 				liTwo.append(each)
-				liTwo.remove(each)
+				numset.remove(each)
 		return 3,max(liTwo),min(liTwo),numset[0]
 	elif is_one_pair(hand):
 		num=numhand(hand)
@@ -117,7 +117,7 @@ def handrank(hand):
 		for each in numset:
 			if num.count(each)==2:
 				liTwo.append(each)
-				liTwo.remove(each)
+				numset.remove(each)
 		return 2,liTwo[0],numset[0],numset[1],numset[2]
 	else:
 		num=numhand(hand)

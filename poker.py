@@ -74,7 +74,7 @@ def is_fullhouse(hand):
 
 def handrank(hand):
 	if is_royal(hand):
-		return 10
+		return 10,0
 	elif is_straightflush(hand):
 		return 9,max(numhand(hand))
 	elif is_four_of_kind(hand):

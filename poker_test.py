@@ -331,7 +331,7 @@ class HandRank(unittest.TestCase):
         expected = (4,14,8,3)
         self.assertEqual(actual, expected)
     def test14_handrank(self):
-            """test14_handrank ['5C', '5D', '5S', '6S', '7C']-->(4,5,7,6)"""
+        """test14_handrank ['5C', '5D', '5S', '6S', '7C']-->(4,5,7,6)"""
         actual = poker.handrank(['5C', '5D', '5S', '8S', '7C'])
         expected = (4,5,7,6)
         self.assertEqual(actual, expected)

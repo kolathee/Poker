@@ -1,5 +1,6 @@
 def numhand(hand):
 	rank = ['--23456789TJQKA'.index(r) for r,s in hand]
+	rank.sort(reverse=True)
 	return rank
 
 def dokhand(hand):

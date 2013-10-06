@@ -370,5 +370,59 @@ class HandRank(unittest.TestCase):
         self.assertEqual(actual, expected)
     ##High card
     
+class WhoWin(unittest.TestCase):
+    def test1_whowin(self):
+        """test1_whowin [['QD','9D','7D','4D','3D'],['AS', '3H', '8D', '5H', 'KH'],['AS', '3H', '8D', '5H', 'KH']]-->['QD','9D','7D','4D','3D']"""
+        actual = poker.whowin([['QD','9D','7D','4D','3D'],['AS', '3H', '8D', '5H', 'KH'],['AS', '3H', '8D', '5H', 'KH']])
+        expected = [['QD','9D','7D','4D','3D']]
+        self.assertEqual(actual, expected)
+    def test2_whowin(self):
+        """test2_whowin ['TC','JC','QC','KC','AC'],['TH','JH','QH','KH','AH'],[['KC','QC','JC','TC','9C']]-->[['TC','JC','QC','KC','AC'],['TH','JH','QH','KH','AH']]"""
+        actual = poker.whowin(['TC','JC','QC','KC','AC'],['TH','JH','QH','KH','AH'],[['KC','QC','JC','TC','9C']])
+        expected = [['TC','JC','QC','KC','AC'],['TH','JH','QH','KH','AH']]
+        self.assertEqual(actual, expected)
+    def test3_whowin(self):
+        """test3_whowin [['6S', '8H', '7S', '9C', 'TS'],['8H','7D','6S','5C','4D'],['5D', '4S', '3D', '2D', '6H']]-->[['6S', '8H', '7S', '9C', 'TS']]"""
+        actual = poker.whowin([['6S', '8H', '7S', '9C', 'TS'],['8H','7D','6S','5C','4D'],['5D', '4S', '3D', '2D', '6H']])
+        expected = [['6S', '8H', '7S', '9C', 'TS']]
+        self.assertEqual(actual, expected)
+    def test4_whowin(self):
+        """test4_whowin [['8C','8S','8D','8H','JH'],['9C','9S','9D','9H','JH'],['AS', 'AD', '3C', '8C', 'AH']]-->[['9C','9S','9D','9H','JH']]"""
+        actual = poker.whowin([['8C','8S','8D','8H','JH'],['9C','9S','9D','9H','JH'],['AS', 'AD', '3C', '8C', 'AH']])
+        expected = [['9C','9S','9D','9H','JH']]
+        self.assertEqual(actual, expected)
+    def test5_whowin(self):
+        """test5_whowin [['AS', 'AD', '3C', '8C', 'AH'],['3C', '4H', '3D', '4C', 'AC'],['5D', 'TS', '5C', 'TD', '5H']]-->[['5D', 'TS', '5C', 'TD', '5H']]"""
+        actual = poker.whowin([['AS', 'AD', '3C', '8C', 'AH'],['3C', '4H', '3D', '4C', 'AC'],['5D', 'TS', '5C', 'TD', '5H']])
+        expected = [['5D', 'TS', '5C', 'TD', '5H']]
+        self.assertEqual(actual, expected)
+    
+    def test6_whowin(self):
+        """test6_whowin [['3D', '3C', 'TD', '8D', '9H'],['3H', '3S', 'AC', '6D', '2D'],['3S', '3T', '6C', '7D', '7H']]-->[['3H', '3S', 'AC', '6D', '2D']]"""
+        actual = poker.whowin([['3D', '3C', 'TD', '8D', '9H'],['3H', '3S', 'AC', '6D', '2D'],['3S', '3T', '6C', '7D', '7H']])
+        expected = [['3H', '3S', 'AC', '6D', '2D']]
+        self.assertEqual(actual, expected)
+    def test7_whowin(self):
+        """test7_whowin [['JC', '5D', 'KS', 'TH', '2H'],['AS', '3H', '8D', '5H', 'KH']]-->[['AS', '3H', '8D', '5H', 'KH']]"""
+        actual = poker.whowin([['JC', '5D', 'KS', 'TH', '2H'],['AS', '3H', '8D', '5H', 'KH']])
+        expected = [['AS', '3H', '8D', '5H', 'KH']]
+        self.assertEqual(actual, expected)
+    def test8_whowin(self):
+        """test8_whowin [['6D', '4C', 'AH', 'JC', 'AD'],['3C', '8H', '5D', '8C', '4C'],['3C', '4H', '3D', '4C', 'AC']]--> [['3C', '4H', '3D', '4C', 'AC']]"""
+        actual = poker.whowin([['6D', '4C', 'AH', 'JC', 'AD'],['3C', '8H', '5D', '8C', '4C'],['3C', '4H', '3D', '4C', 'AC']])
+        expected =  [['3C', '4H', '3D', '4C', 'AC']]
+        self.assertEqual(actual, expected)
+    def test9_whowin(self):
+        """test9_whowin [['TC','JC','QC','KC','AC']]--> [['TC','JC','QC','KC','AC']]"""
+        actual = poker.whowin([['TC','JC','QC','KC','AC']])
+        expected =  [['TC','JC','QC','KC','AC']]
+        self.assertEqual(actual, expected)
+    
+    def test10_whowin(self):
+        """test10_whowin [['TC', '4C', '5H', '8S', '6D'],['6S', '3H', 'AD', '9C', '9S']]--> [['6S', '3H', 'AD', '9C', '9S']]"""
+        actual = poker.whowin([['TC', '4C', '5H', '8S', '6D'],['6S', '3H', 'AD', '9C', '9S']])
+        expected =  [['6S', '3H', 'AD', '9C', '9S']]
+        self.assertEqual(actual, expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)

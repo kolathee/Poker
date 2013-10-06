@@ -258,5 +258,117 @@ class TestFullHouse(unittest.TestCase):
         expected = False
         self.assertEqual(actual, expected)
 
+class HandRank(unittest.TestCase):
+    def test1_handrank(self):
+        """test1_handrank ['TH','JH','QH','KH','AH']-->10"""
+        actual = poker.handrank(['TH','JH','QH','KH','AH'])
+        expected = 10
+        self.assertEqual(actual, expected)
+    def test2_handrank(self):
+        """test2_handrank ['TC','JC','QC','KC','AC']-->10"""
+        actual = poker.handrank(['TC','JC','QC','KC','AC'])
+        expected = 10
+        self.assertEqual(actual, expected)
+    ##Royal
+    def test3_handrank(self):
+        """test3_handrank ['6S', '8S', '7S', '9S', 'TS']-->(9,10)"""
+        actual = poker.handrank(['6S', '8S', '7S', '9S', 'TS'])
+        expected = (9,10)
+        self.assertEqual(actual, expected)
+    def test4_handrank(self):
+        """test4_handrank ['KC','QC','JC','TC','9C']-->(9,13)"""
+        actual = poker.handrank(['KC','QC','JC','TC','9C'])
+        expected = (9,13)
+    ##straight Flush
+        self.assertEqual(actual, expected)
+    def test5_handrank(self):
+        """test5_handrank ['9C','9S','9D','9H','JH']-->(8,9)"""
+        actual = poker.handrank(['9C','9S','9D','9H','JH'])
+        expected = (8,11)
+        self.assertEqual(actual, expected)
+    def test6_handrank(self):
+        """test6_handrank ['8C','8S','8D','8H','JH']-->(8,8)"""
+        actual = poker.handrank(['8C','8S','8D','8H','JH'])
+        expected = (8,8)
+        self.assertEqual(actual, expected)
+    ##Four of a kind 
+    def test7_handrank(self):
+        """test7_handrank ['4D', '4S', '2D', '4D', '2H']-->(7,4,2)"""
+        actual = poker.handrank(['4D', '4S', '2D', '4D', '2H'])
+        expected = (7,4,2)
+        self.assertEqual(actual, expected)
+    def test8_handrank(self):
+        """test8_handrank ['5D', 'TS', '5C', 'TD', '5H']-->(7,5,14)"""
+        actual = poker.handrank(['5D', 'TS', '5C', 'TD', '5H'])
+        expected = (7,5,14)
+        self.assertEqual(actual, expected)
+    ##Fullhouse
+    def test9_handrank(self):
+        """test9_handrank ['QD','9D','7D','4D','3D']-->(6,12)"""
+        actual = poker.handrank(['QD','9D','7D','4D','3D'])
+        expected = (6,12)
+        self.assertEqual(actual, expected)
+    def test10_handrank(self):
+        """test10_handrank ['KH','QH','9H','5H','4H']-->(6,13)"""
+        actual = poker.handrank(['KH','QH','9H','5H','4H'])
+        expected = (6,13)
+        self.assertEqual(actual, expected)
+    ##Flush
+    def test11_handrank(self):
+        """test11_handrank ['6S', '8H', '7S', '9C', 'TS']-->(5,10)"""
+        actual = poker.handrank(['6S', '8H', '7S', '9C', 'TS'])
+        expected = (5,10)
+        self.assertEqual(actual, expected)
+    def test12_handrank(self):
+        """test12_handrank ['QC','JS','TS','9H','8H']-->(5,12)"""
+        actual = poker.handrank(['QC','JS','TS','9H','8H'])
+        expected = (5,12)
+        self.assertEqual(actual, expected)
+    ##Straight
+    def test13_handrank(self):
+        """test13_handrank ['AS', 'AD', '3C', '8C', 'AH']-->(4,14,8,3)"""
+        actual = poker.handrank(['AS', 'AD', '3C', '8C', 'AH'])
+        expected = (4,14,8,3)
+        self.assertEqual(actual, expected)
+    def test14_handrank(self):
+            """test14_handrank ['5C', '5D', '5S', '6S', '7C']-->(4,5,7,6)"""
+        actual = poker.handrank(['5C', '5D', '5S', '8S', '7C'])
+        expected = (4,5,7,6)
+        self.assertEqual(actual, expected)
+    ##Three of a kind 
+    def test15_handrank(self):
+        """test15_handrank ['2D', '9D', '2S', 'AD', 'AH']-->(3,14,2,9)"""
+        actual = poker.handrank(['2D', '9D', '2S', 'AD', 'AH'])
+        expected = (3,14,2,9)
+        self.assertEqual(actual, expected)
+    def test16_handrank(self):
+        """test16_handrank ['3C', '4H', '3D', '4C', 'AC']-->(3,4,3,14)"""
+        actual = poker.handrank(['3C', '4H', '3D', '4C', 'AC'])
+        expected = (3,4,3,14)
+        self.assertEqual(actual, expected)
+    ##Two pair
+    def test17_handrank(self):
+        """test17_handrank ['6D', '4C', 'AH', 'JC', 'AD']-->(2,14,11,6,4)"""
+        actual = poker.handrank(['6D', '4C', 'AH', 'JC', 'AD'])
+        expected = (2,14,11,6,4)
+        self.assertEqual(actual, expected)
+    def test18_handrank(self):
+        """test18_handrank ['QH', 'AH', 'QC', '4S', '8S']-->(2,12,14,8,4)"""
+        actual = poker.handrank(['QH', 'AH', 'QC', '4S', '8S'])
+        expected = (2,12,14,8,4)
+        self.assertEqual(actual, expected)
+    ##One pair
+    def test19_handrank(self):
+        """test19_handrank ['AS', '3H', '8D', '5H', 'KH']-->(1,14,13)"""
+        actual = poker.handrank(['AS', '3H', '8D', '5H', 'KH'])
+        expected = (1,14,13)
+        self.assertEqual(actual, expected)
+    def test20_handrank(self):
+        """test20_handrank ['JC', '5D', 'KS', 'TH', '2H']-->(1,13,11)"""
+        actual = poker.handrank(['JC', '5D', 'KS', 'TH', '2H'])
+        expected = (1,13,11)
+        self.assertEqual(actual, expected)
+    ##High card
+    
 if __name__ == '__main__':
     unittest.main(exit=False)

@@ -24,17 +24,17 @@ class TestDokhand(unittest.TestCase):
     def test1_dokhand(self):
         """test_dokhand ['2C','3C','4D','5H','6S']-->['C','C','D','H','S']"""
         actual = poker.dokhand(['2C','3C','4D','5H','6S'])
-        expected = ['C','C','D','H','S']
+        expected = [0.1,0.1,0.2,0.3,0.4]
         self.assertEqual(actual, expected)
     def test2_dokhand(self):
         """test_dokhand ['JC','TC','9C','8C','7C']-->['C','C','C','C','C']"""
         actual = poker.dokhand(['JC','TC','9C','8C','7C'])
-        expected = ['C','C','C','C','C']
+        expected = [0.1,0.1,0.1,0.1,0.1]
         self.assertEqual(actual, expected)
     def test3_dokhand(self):
         """test_dokhand ['8D','9H','3D','3C','7S']-->['D','H','D','C','S']"""
         actual = poker.dokhand(['8D','9H','3D','3C','7S'])
-        expected = ['D','H','D','C','S']
+        expected = [0.2,0.3,0.2,0.1,0.4]
         self.assertEqual(actual, expected)
 
 class TestFlush(unittest.TestCase):

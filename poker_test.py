@@ -262,12 +262,12 @@ class HandRank(unittest.TestCase):
     def test1_handrank(self):
         """test1_handrank ['TH','JH','QH','KH','AH']-->10"""
         actual = poker.handrank(['TH','JH','QH','KH','AH'])
-        expected = 10
+        expected = (10,0)
         self.assertEqual(actual, expected)
     def test2_handrank(self):
         """test2_handrank ['TC','JC','QC','KC','AC']-->10"""
         actual = poker.handrank(['TC','JC','QC','KC','AC'])
-        expected = 10
+        expected = (10,0)
         self.assertEqual(actual, expected)
     ##Royal
     def test3_handrank(self):

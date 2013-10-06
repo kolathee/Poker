@@ -6,17 +6,17 @@ class TestNumhand(unittest.TestCase):
     def test1_numhand(self):
         """test_numhand ['2C','3C','4D','5H','6S']-->[2,3,4,5,6]"""
         actual = poker.numhand(['2C','3C','4D','5H','6S'])
-        expected = [2,3,4,5,6]
+        expected = [6,5,4,3,2]
         self.assertEqual(actual, expected)
     def test2_numhand(self):
         """test_numhand ['8D','9H','3D','3C','7S']-->[8,9,3,3,7]"""
         actual = poker.numhand(["8D","9H","3D","3C","7S"])
-        expected = [8,9,3,3,7]
+        expected = [9,8,7,3,3]
         self.assertEqual(actual, expected)
     def test3_numhand(self):
         """test_numhand ['2D','2C','2H','6S','JD']-->[2,2,2,6,11]"""
         actual = poker.numhand(['2D','2C','2H','6S','JD'])
-        expected = [2,2,2,6,11]
+        expected = [11,6,2,2,2]
         self.assertEqual(actual, expected)
 
 class TestDokhand(unittest.TestCase):

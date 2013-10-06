@@ -126,3 +126,12 @@ def handrank(hand):
 		num=numhand(hand)
 		num.sort(reverse=True)
 		return 1,num[0],num[1]
+
+def whowin(hands):
+	winner=max(hands,key=handrank)
+	maxrank=handrank(winner)
+	out=[]
+	for hand in hands:
+		if handrank(hand)==maxrank:
+			out.append(hand)
+	return out

@@ -284,7 +284,7 @@ class HandRank(unittest.TestCase):
     def test5_handrank(self):
         """test5_handrank ['9C','9S','9D','9H','JH']-->(8,9)"""
         actual = poker.handrank(['9C','9S','9D','9H','JH'])
-        expected = (8,11)
+        expected = (8,9)
         self.assertEqual(actual, expected)
     def test6_handrank(self):
         """test6_handrank ['8C','8S','8D','8H','JH']-->(8,8)"""
@@ -298,9 +298,9 @@ class HandRank(unittest.TestCase):
         expected = (7,4,2)
         self.assertEqual(actual, expected)
     def test8_handrank(self):
-        """test8_handrank ['5D', 'TS', '5C', 'TD', '5H']-->(7,5,14)"""
+        """test8_handrank ['5D', 'TS', '5C', 'TD', '5H']-->(7,5,10)"""
         actual = poker.handrank(['5D', 'TS', '5C', 'TD', '5H'])
-        expected = (7,5,14)
+        expected = (7,5,10)
         self.assertEqual(actual, expected)
     ##Fullhouse
     def test9_handrank(self):

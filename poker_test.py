@@ -436,5 +436,11 @@ class WhoWin(unittest.TestCase):
         expected =  [['6S', '3H', 'AD', '9C', '9S']]
         self.assertEqual(actual, expected)
 
+    def test11_whowin(self):
+        """test11_whowin [['QS', 'AC', 'TD', 'KD', 'JH'],['TC', 'QC', '9C', '5C', '8C'],['QH', '2D', 'AH', '7C', '6C']]--> [['TC', 'QC', '9C', '5C', '8C']]"""
+        actual = poker.whowin([['QS', 'AC', 'TD', 'KD', 'JH'],['TC', 'QC', '9C', '5C', '8C'],['QH', '2D', 'AH', '7C', '6C']])
+        expected =  [['TC', 'QC', '9C', '5C', '8C']]
+        self.assertEqual(actual, expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)

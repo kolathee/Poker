@@ -11,7 +11,7 @@ def numhand(hand):
 	return rank
 
 def dokhand(hand):
-	suit=['-CDHS'.index(s)/10.0 for r,s in hand]
+    suit=['-CDHS'.index(s)/10.0 for r,s in hand]
     return suit
 
 def is_flush(hand):

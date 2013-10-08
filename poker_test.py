@@ -133,6 +133,18 @@ class TestRoyal(unittest.TestCase):
         expected = False
         self.assertEqual(actual, expected)
 
+    def test4_is_royal(self):
+        """test4_is_royal ['TS','JS','QS','KS','AS']-->True"""
+        actual = poker.is_royal(['JS','TS','QS','AS','KS'])
+        expected = True
+        self.assertEqual(actual, expected)
+
+    def test5_is_royal(self):
+        """test5_is_royal ['TD','JD','QD','KD','AD']-->True"""
+        actual = poker.is_royal(['TD','JD','QD','KD','AD'])
+        expected = True
+        self.assertEqual(actual, expected)
+
 class Testthree_of_kind(unittest.TestCase):
     def test1_is_three_of_kind(self):
         """test1_is_Three_of_kind ['3C', 'TD', '5D', '4H', '8H']-->False"""

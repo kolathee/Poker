@@ -73,6 +73,13 @@ def is_fullhouse(hand):
 	return (num.count(numset[0])==3 and num.count(numset[1])==2) or	(num.count(numset[0])==2 and num.count(numset[1])==3)
 
 def handrank(hand):
+	"""
+	This function is used to calculate the score of the hand.
+	intput -->The list of cards on hand 
+	ex.['8D','9H','3D','3C','7S']
+	return --> Tuple of int 
+	ex.(2,3,9,8,7)
+	"""
 	if is_royal(hand):
 		return 10,0
 	elif is_straightflush(hand):

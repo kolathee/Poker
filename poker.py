@@ -129,11 +129,9 @@ def is_fullhouse(hand):
 
 def handrank(hand):
 	"""
-	This function is used to calculate the score of the hand.
-	input -->The list of cards on hand 
-	ex.['8D','9H','3D','3C','7S']
-	return --> Tuple of int 
-	ex.(2,3,9,8,7)
+	(hand) --> tuple
+
+	Return rank of a hand
 	"""
 	if is_royal(hand):
 		return 10,0

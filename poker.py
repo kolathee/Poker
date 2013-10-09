@@ -1,10 +1,8 @@
 def numhand(hand):
 	"""
-	Take a number of card on your hand put in a new list.
-	input --> list of card 
-	ex.['JC','TC','9C','8C','7C']
-	return list of number of card on hand
-	ex.[11,10,9,8,7]
+	(hand) --> list of rank
+	
+	Return ranks of a hand
 	"""
 	rank = ['--23456789TJQKA'.index(r) for r,s in hand]
 	rank.sort(reverse=True)

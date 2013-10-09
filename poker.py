@@ -200,3 +200,6 @@ def whowin(hands):
 		if handrank(hand)==maxrank:
 			out.append(hand)
 	return out
+
+hands=input()
+print whowin(hands)

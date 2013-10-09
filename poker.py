@@ -9,29 +9,29 @@ def numhand(hand):
 	return rank
 
 def dokhand(hand):
-    '''
-    (hand) --> list of suits
+	'''
+	(hand) --> list of suits
 
-    Return suits of a hand
-    '''
-    suit=['-CDHS'.index(s)/10.0 for r,s in hand]
-    return suit
+	Return suits of a hand
+	'''
+	suit=['-CDHS'.index(s)/10.0 for r,s in hand]
+	return suit
 
 def is_flush(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is flush, else False
-    '''
-    suit=dokhand(hand)
-    return len(set(suit)) == 1
+	Return True if hand is flush, else False
+	'''
+	suit=dokhand(hand)
+	return len(set(suit)) == 1
 
 def is_straight(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is straight, else False
-    '''
+	Return True if hand is straight, else False
+	'''
 	num=numhand(hand)
 	num.sort()
 	for i in xrange(3):
@@ -40,29 +40,29 @@ def is_straight(hand):
 	return True
 	
 def is_royal(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is royal flush, else False
-    '''
+	Return True if hand is royal flush, else False
+	'''
 	if sum(numhand(hand))== 60 and len(set(dokhand(hand)))==1:
 		return True
 	return False
 
 def is_straightflush(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is straight flush, else False
-    '''
+	Return True if hand is straight flush, else False
+	'''
 	return is_straight(hand) and is_flush(hand)
 
 def is_three_of_kind(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is three of a kind, else False
-    '''
+	Return True if hand is three of a kind, else False
+	'''
 	num=numhand(hand)
 	numset=list(set(num))
 	for each in numset:
@@ -71,11 +71,11 @@ def is_three_of_kind(hand):
 	return False
 
 def is_four_of_kind(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is four of a kind, else False
-    '''
+	Return True if hand is four of a kind, else False
+	'''
 	num=numhand(hand)
 	numset=list(set(num))
 	for each in numset:
@@ -84,11 +84,11 @@ def is_four_of_kind(hand):
 	return False
 
 def is_two_pair(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is two pair, else False
-    '''
+	Return True if hand is two pair, else False
+	'''
 	count=0
 	num=numhand(hand)
 	numset=list(set(num))
@@ -100,11 +100,11 @@ def is_two_pair(hand):
 	return False 
 
 def is_one_pair(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is one pair, else False
-    '''
+	Return True if hand is one pair, else False
+	'''
 	count=0
 	num=numhand(hand)
 	numset=list(set(num))
@@ -116,11 +116,11 @@ def is_one_pair(hand):
 	return False
 
 def is_fullhouse(hand):
-    '''
-    (hand) -->  bool
+	'''
+	(hand) -->  bool
 
-    Return True if hand is full house, else False
-    '''
+	Return True if hand is full house, else False
+	'''
 	num=numhand(hand)
 	numset=list(set(num))
 	if len(numset)!=2:

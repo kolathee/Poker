@@ -191,9 +191,9 @@ def handrank(hand):
 
 def whowin(hands):
 	"""
-	This function is used to find the winner.
-	input --> list of list (The list contains many hands.)
-	return card of the winner.
+	([hand, hand, ..., hand]) --> hand
+
+	Return the best hand from a list of hands
 	"""
 	winner=max(hands,key=handrank)
 	maxrank=handrank(winner)
